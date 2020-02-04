@@ -1,0 +1,33 @@
+.navbar{
+    width:100%;
+    color:white;
+    background: #1E0E05;
+}
+
+
+.nav-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand-text h2{
+    font-size: 1.7vw;
+}
+
+.navbar-items ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-item{
+    display: inline-block;
+    margin: 15px 20px;
+}
+
+.navbar-item a{
+    color:white;
+    text-decoration: none;
+}
