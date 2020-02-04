@@ -92,7 +92,9 @@
 }
 
 /* HOME MENU */
-
+.home-menu{
+    padding: 10px 0px 50px 0px;
+}
 .home-menu-content{
     width:100%;
     display: flex;
@@ -100,8 +102,9 @@
 }
 .home-menu-grid{
     display: grid;
-    width: 60%;
+    width: 50%;
     grid-template-columns: auto auto;
+    justify-content: space-between;
 }
 .home-menu-card{
     display: flex;
@@ -121,6 +124,7 @@
 /* HOME EVENT */
 
 .home-events{
+    padding: 10px 0px 50px 0px;
     background: #1E0E05;
     color:white;
 }
@@ -130,4 +134,54 @@
     display: grid;
     grid-template-columns: auto auto auto;
     text-align: center;
+}
+
+/* Home contact */
+
+.home-contact{
+    width:100%;
+    padding-bottom: 50px;
+}
+
+.home-form-text{
+    height: 120px;
+}
+
+.home-contact-content{
+    display:flex;
+    width: 100%;
+    justify-content:space-between;
+}
+.home-contact-content > div {
+    width: 40%;
+}
+
+.form-inputs{
+    width: 100%;
+    padding: 20px;
+    margin: 20px 5px;
+    border: 1px solid black;
+}
+
+.map-embed{
+    width:100%;
+    height: 60vh;
+}
+
+.home-contact-txt h5{
+    margin-bottom: 20px;
+}
+
+.home-gallery-grid{
+    width: 100;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.gallery-grid-pic{
+    height: 40vh;
+}
+.gallery-grid-pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

@@ -1,0 +1,18 @@
+.footer{
+    background: #000000;
+    color: white;
+    padding: 30px 0px 10px 0px;
+}
+
+.footer-container{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-container > div{
+    width:30%;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+}
