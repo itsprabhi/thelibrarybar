@@ -1,0 +1,35 @@
+.forms{
+    width:100%;
+    height: 90vh;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.forms > div{
+    width: 40%;
+}
+
+.form-heading{
+    text-align: center;
+    margin: 20px;
+}
+
+.form-container form{
+    width:100%;
+}
+
+.form-input-text{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px 5px;
+}
+
+.form-btn{
+    padding: 10px 15px;
+    background: #EA9B03;
+    color:white;
+    text-decoration: none;
+    border: none;
+}
