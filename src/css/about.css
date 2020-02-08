@@ -1,0 +1,20 @@
+.about-page-content{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center ;
+}
+.about-page-content >div{
+    width: 50%;
+}
+.about-page-img{
+    height: 100%;
+}
+.about-page-img img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about-page-text{
+    padding: 30px;
+}

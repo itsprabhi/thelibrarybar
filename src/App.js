@@ -7,6 +7,7 @@ import { BrowserRouter,Route } from 'react-router-dom';
 import './css/navbar.css'
 import './css/footer.css'
 import './css/home.css'
+import './css/forms.css'
 
 //Pages
 import Home from './pages/home'
@@ -16,7 +17,7 @@ import Menu from './pages/menu'
 import PostMeal from './pages/admin/postMeal'
 import Login from './pages/login'
 import Signup from './pages/signup'
-
+import Meal from './pages/meal'
 class App extends Component {
   render(){
     return (
@@ -30,6 +31,7 @@ class App extends Component {
           <Route path = '/login' component = {Login} />
           <Route path = '/signup' component = {Signup} />
           <Route path = '/admin/add/meal' component = {PostMeal} />
+          <Route path = '/meal/:id' component = {Meal} />
           <Footer />
         </div>
       </BrowserRouter>

@@ -34,14 +34,14 @@ export class Home extends Component {
             this.state.meals.slice(0,6).map(meal => 
                 <div className = 'home-menu-card'>
                     <div className = 'home-menu-card-img'>
-                        <img src = {meal.mealImg} alt = 'dish pic'></img>
+                        <img src = {meal.data.mealImg} alt = 'dish pic'></img>
                     </div>
                     <div className = 'home-menu-card-txt'>
                         <h5>
-                            {meal.mealTitle}
+                            {meal.data.mealTitle}
                         </h5>
                         <p>
-                            {meal.mealPrice}
+                            {meal.data.mealPrice}
                         </p>
                     </div>
                 </div>
@@ -187,7 +187,7 @@ export class Home extends Component {
                                     <input className = 'form-inputs' type = 'email' id = 'email' name = 'email'></input><br />
                                     <input className = 'form-inputs' type = 'text' id = 'name' name = 'name'></input><br />
                                     <textarea className = 'form-inputs home-form-text'></textarea><br />
-                                    <input type="submit" value="Submit" />
+                                    <input className = 'form-btn' type="submit" value="Submit" />
                                 </form>
                             </div>
                             <div className = 'home-contact-text'>

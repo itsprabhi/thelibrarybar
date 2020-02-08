@@ -24,17 +24,17 @@ export class Menu extends Component {
             this.state.meals.map(meal => (
                 <div className = 'menu-grid-card'>
                     <div className = 'menu-grid-card-img'>
-                        <img src = {meal.mealImg} alt = 'meal phto'></img>
+                        <img src = {meal.data.mealImg} alt = 'meal phto'></img>
                     </div>
                     <div className = 'menu-grid-card-txt'>
                         <h3>
-                            {meal.mealTitle}
+                            {meal.data.mealTitle}
                         </h3>
                         <p>
-                            {meal.mealPrice}
+                            {meal.data.mealPrice}
                         </p>
                         <div class = 'order-btn'>
-                            <a href = {`/meal/${meal.uid}`}>
+                            <a href = {`/meal/${meal.mealId}`} id = {meal.mealId}>
                                 View
                             </a>
                         </div>
