@@ -16,19 +16,43 @@ export class Menu extends Component {
             this.setState({
                 mealData:doc.data
             })
-            console.log(this.state.mealData)
         })
     }
     render() {
-        return (
-            <div>
-                <div className = 'meal-page'>
-                    <div className = 'section-heading'>
-                        <h2>
-                            
-                        </h2>
+        let mealPage = this.state.mealData ? (
+            <div className = 'meal-page'>
+                <div className = 'container'>
+                    <div className = 'meal-page-content'>
+                        <div class = 'meal-page-img'>
+                            <img src = {this.state.mealData.mealData.mealImg} alt = 'dish pic' />
+                        </div>
+                        <div className = 'meal-page-txt'>
+                            <h3>
+                                {this.state.mealData.mealData.mealTitle}
+                            </h3>
+                            <p>
+                                {this.state.mealData.mealData.mealBody}
+                            </p>
+                            <h4>
+                                $ {this.state.mealData.mealData.mealPrice}
+                            </h4>
+                            <div className = 'order-btn'>
+                                <a href = '/'>
+                                    Order
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        ) : (
+            <div className = 'loading-part'>
+                loading....
+            </div>
+        )
+        return (
+            <div>
+                {mealPage}
             </div>
         )
     }
