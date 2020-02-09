@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/navbar';
 import Footer from './components/footer'
 import { BrowserRouter,Route } from 'react-router-dom';
+import jwtDecode from 'jwt-decode'
 
 //CSS
 import './css/navbar.css'
@@ -18,6 +19,20 @@ import PostMeal from './pages/admin/postMeal'
 import Login from './pages/login'
 import Signup from './pages/signup'
 import Meal from './pages/meal'
+
+
+const token = localStorage.FBIdToken
+console.log(token)
+if(token){
+  const decodedToken = jwtDecode(token);
+  console.log(decodedToken)
+}else{
+  console.log('token not found')
+}
+
+
+
+
 class App extends Component {
   render(){
     return (

@@ -37,6 +37,16 @@ const Navbar = () => {
                                             About
                                         </Link>
                                     </li>
+                                    <li className = 'navbar-item'>
+                                        <div className="dropdown">
+                                            <button className="dropbtn">User</button>
+                                            <div className="dropdown-content">
+                                                <a href="/login">Login</a>
+                                                <a href="/signup">Signup</a>
+                                                <a href = '/user'>Dashboard</a>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

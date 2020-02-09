@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import '../css/forms.css'
 
 export class Login extends Component {
@@ -6,7 +7,8 @@ export class Login extends Component {
         super();
         this.state = {
             email:'',
-            password:''
+            password:'',
+            errors:{}
         }
     }
     handleChange = (event) => {
@@ -15,9 +17,53 @@ export class Login extends Component {
         })
     }
     handleSubmit = () => {
-
+        
+        const userDetails = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        axios.post('/login', userDetails)
+        .then(res => {
+            localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`)
+            return console.log(res.data)
+        })
+        .catch(err => {
+            this.setState({
+                errors:{
+                    error:err.response.data.errors
+                }
+            })
+            console.log(this.state.errors)
+        })
     }
     render() {
+        const emailHelper = this.state.errors.error ? (
+            <p>
+                {this.state.errors.error.email}
+            </p>
+        ) : (
+            <p>
+                
+            </p>
+            )
+        const passwordHelper = this.state.errors.error ? (
+            <p>
+                {this.state.errors.error.password}
+            </p>
+        ) : (
+            <p>
+                
+            </p>
+            )
+        // const credentailsHelper = this.state.errors.error ? (
+        //     <p>
+        //         {this.state.errors.error.code}
+        //     </p>
+        // ) : (
+        //     <p>
+        //         Wrong credentials
+        //     </p>
+        //     )
         return (
             <div>
                 <div className = 'login-page'>
@@ -30,13 +76,14 @@ export class Login extends Component {
                                     </h1>
                                 </div>
                                 <div class = 'form-container'>
-                                    <form className = 'login' id = 'login' method = 'post'>
+                                    
                                         <lable for = 'email' />Email<br />
                                         <input type = 'email' id = 'email' name = 'email' className = 'login-email form-input-text' placeholder = 'Enter your email' onChange = {this.handleChange} /><br />
+                                        <p>{emailHelper}</p>
                                         <lable for = 'password' />Password<br />
                                         <input type = 'password' id = 'password' name = 'password' className = 'login-password form-input-text' placeholder = 'Enter your password' onChange = {this.handleChange}/><br />
+                                        <p> {passwordHelper} </p>
                                         <button className = 'form-btn' onClick = {this.handleSubmit}>Submit</button>
-                                    </form>
                                 </div>
                             </div>
                         </div>
