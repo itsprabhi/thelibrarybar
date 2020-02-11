@@ -11,7 +11,9 @@ export class PostMeal extends Component {
             mealPrice: null,
             mealBody: '',
             mealImg: '',
-            errors:''
+            mealType:'',
+            mealPref:'',
+            errors:{}
         }
     }
     handleChange = (event) => {
@@ -25,7 +27,9 @@ export class PostMeal extends Component {
             mealImg:this.state.mealImg,
             mealTitle:this.state.mealTitle,
             mealPrice:this.state.mealPrice,
-            mealBody:this.state.mealBody
+            mealBody:this.state.mealBody,
+            mealType:this.state.mealType,
+            mealPref:this.state.mealPref
         }
         axios.post('/meals',meal)
         .then(res => {
@@ -52,6 +56,28 @@ export class PostMeal extends Component {
                             </div>
                             <div className = 'form-container'>
                                 <form className = 'admin-add' id = 'admin-add' method = 'post'>
+                                    <select id = 'mealType' className = 'meal-type' name = 'mealType'>
+                                        <option value = 'burger'>
+                                            Burgers
+                                        </option>
+                                        <option value = 'pizza'>
+                                            Pizza
+                                        </option>
+                                        <option value = 'drinks'>
+                                            Drinks
+                                        </option>
+                                        <option value = 'salads'>
+                                            Salads
+                                        </option>
+                                    </select>
+                                    <select id = 'mealPref' className = 'meal-pref' name = 'mealPref'>
+                                        <option value = 'veg'>
+                                            Vegetarian
+                                        </option>
+                                        <option value = 'nonveg'>
+                                            Non-Vegetarian
+                                        </option>
+                                    </select>
                                     <input type = 'text' id = 'mealTitle' name = 'mealTitle' className = 'admin-meal-title form-input-text' placeholder = 'Enter the meal title' onChange = {this.handleChange} /><br />
                                     <input type = 'text' id = 'mealPrice' name = 'mealPrice' className = 'admin-meal-price form-input-text' placeholder = 'Enter the meal price' onChange = {this.handleChange}/><br />
                                     <textarea id = 'mealBody' name = 'mealBody' className = 'admin-meal-body form-input-text' placeholder = 'Enter the meal body' onChange = {this.handleChange}></textarea><br />

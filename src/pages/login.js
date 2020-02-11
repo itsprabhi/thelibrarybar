@@ -17,15 +17,15 @@ export class Login extends Component {
         })
     }
     handleSubmit = () => {
-        
         const userDetails = {
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
         }
         axios.post('/login', userDetails)
         .then(res => {
+            console.log(res.data)
             localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`)
-            return console.log(res.data)
+            this.props.history.push('/user')
         })
         .catch(err => {
             this.setState({
@@ -55,37 +55,38 @@ export class Login extends Component {
                 
             </p>
             )
-        // const credentailsHelper = this.state.errors.error ? (
-        //     <p>
-        //         {this.state.errors.error.code}
-        //     </p>
-        // ) : (
-        //     <p>
-        //         Wrong credentials
-        //     </p>
-        //     )
+        const handleHelper = this.state.errors.error ? (
+            <p>
+                {this.state.errors.error.userHandle}
+            </p>
+        ) : (
+            <p>
+                
+            </p>
+            )
         return (
             <div>
                 <div className = 'login-page'>
                     <div className = 'container'>
                         <div className = 'forms'>
-                            <div>
-                                <div className = 'form-heading'>
+                           <div>
+                            <div className = 'form-heading'>
                                     <h1>
                                         Login
                                     </h1>
                                 </div>
-                                <div class = 'form-container'>
+                                <div className = 'form-container'>
                                     
                                         <lable for = 'email' />Email<br />
-                                        <input type = 'email' id = 'email' name = 'email' className = 'login-email form-input-text' placeholder = 'Enter your email' onChange = {this.handleChange} /><br />
-                                        <p>{emailHelper}</p>
+                                        <input type = 'email' id = 'email' name = 'email' className = 'signup-email form-input-text' placeholder = 'Enter your email' onChange = {this.handleChange} /><br />
+                                        {emailHelper}
                                         <lable for = 'password' />Password<br />
-                                        <input type = 'password' id = 'password' name = 'password' className = 'login-password form-input-text' placeholder = 'Enter your password' onChange = {this.handleChange}/><br />
-                                        <p> {passwordHelper} </p>
+                                        <input type = 'password' id = 'password' name = 'password' className = 'signup-password form-input-text' placeholder = 'Enter your password' onChange = {this.handleChange}/><br />
+                                        {passwordHelper}
                                         <button className = 'form-btn' onClick = {this.handleSubmit}>Submit</button>
+                                    
                                 </div>
-                            </div>
+                           </div>
                         </div>
                     </div>
                 </div>
