@@ -25,6 +25,8 @@ import Login from './pages/login'
 import Signup from './pages/signup'
 import Meal from './pages/meal'
 import User from './pages/user'
+import MealType from './pages/mealType'
+import MealPref from './pages/mealPref'
 
 let authenticated;
 
@@ -33,6 +35,7 @@ console.log(token)
 
 if(token){
   const decodedToken = jwtDecode(token);
+  console.log(decodedToken)
   if(decodedToken.exp * 1000 < Date.now()){
     authenticated = false;
   }else{
@@ -43,6 +46,7 @@ if(token){
 
 class App extends Component {
   render(){
+    console.log(this.props)
     console.log(authenticated)
     return (
       <BrowserRouter>
@@ -56,6 +60,8 @@ class App extends Component {
           <AuthRoute path = '/signup' component = {Signup} authenticated = {authenticated}/>
           <Route path = '/admin/add/meal' component = {PostMeal} />
           <Route path = '/meal/:id' component = {Meal} />
+          <Route path = '/meals/type/:mealType' component = {MealType} />
+          <Route path = '/meals/pref/:mealPref' component = {MealPref} />
           <UserRoute path = '/user' component = {User} authenticated = {authenticated}/>
           <Footer />
         </div>

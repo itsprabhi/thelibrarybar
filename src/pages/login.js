@@ -25,7 +25,7 @@ export class Login extends Component {
         .then(res => {
             console.log(res.data)
             localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`)
-            this.props.history.push('/user')
+            this.props.history.push('/')
         })
         .catch(err => {
             this.setState({

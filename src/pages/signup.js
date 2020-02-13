@@ -28,12 +28,14 @@ export class Signup extends Component {
         axios.post('/signup', userDetails)
         .then(res => {
             console.log(res.data)
-            localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`)
+            const FBIdToken = `Bearer ${res.data.userToken}`
+            localStorage.setItem('FBIdToken', FBIdToken)
+            this.props.history.push('/')
         })
         .catch(err => {
             this.setState({
                 errors:{
-                    error:err.response.data.errors
+                    error:err
                 }
             })
             console.log(this.state.errors)

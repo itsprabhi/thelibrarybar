@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import '../css/menu.css'
 
-export class Menu extends Component {
+export class MenuPref extends Component {
     constructor(){
         super();
         this.state = {
@@ -11,7 +11,8 @@ export class Menu extends Component {
         }
     }
     componentDidMount(){
-        axios.get('/meals')
+        const mealPref = this.props.match.params.mealPref
+        axios.get(`/meals/pref/${mealPref}`)
         .then(res => {
             console.log(res.data)
             this.setState({
@@ -123,4 +124,4 @@ export class Menu extends Component {
     }
 }
 
-export default Menu
+export default MenuPref

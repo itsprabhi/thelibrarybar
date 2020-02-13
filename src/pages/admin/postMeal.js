@@ -22,6 +22,7 @@ export class PostMeal extends Component {
         })
     }
     handleSubmit = event => {
+        const token = localStorage.getItem('FBIdToken')
         event.preventDefault();
         const meal = {
             mealImg:this.state.mealImg,
@@ -31,7 +32,9 @@ export class PostMeal extends Component {
             mealType:this.state.mealType,
             mealPref:this.state.mealPref
         }
-        axios.post('/meals',meal)
+        axios.post('/meals',meal,{
+            headers: { Authorization:token }
+        })
         .then(res => {
             console.log(res.data)
             this.props.history.push('/')
@@ -44,6 +47,7 @@ export class PostMeal extends Component {
         })
     }
     render() {
+        console.log(this.props)
         return (
             <div>
                 <div className = 'container'>
@@ -63,7 +67,7 @@ export class PostMeal extends Component {
                                         <option value = 'pizza'>
                                             Pizza
                                         </option>
-                                        <option value = 'drinks'>
+                                        <option value = 'drink'>
                                             Drinks
                                         </option>
                                         <option value = 'salads'>

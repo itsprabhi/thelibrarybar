@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import '../css/menu.css'
 
-export class Menu extends Component {
+export class MenuType extends Component {
     constructor(){
         super();
         this.state = {
@@ -11,7 +11,8 @@ export class Menu extends Component {
         }
     }
     componentDidMount(){
-        axios.get('/meals')
+        const mealType = this.props.match.params.mealType
+        axios.get(`/meals/type/${mealType}`)
         .then(res => {
             console.log(res.data)
             this.setState({
@@ -123,4 +124,4 @@ export class Menu extends Component {
     }
 }
 
-export default Menu
+export default MenuType
