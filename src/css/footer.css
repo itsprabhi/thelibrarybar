@@ -16,3 +16,12 @@
     width: 100%;
     text-align: center;
 }
+
+@media screen and (max-width:800px){
+    .footer-container{
+        display: block;
+    }
+    .footer-container > div{
+        width:100%;
+    }
+}

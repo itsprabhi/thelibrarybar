@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import jwtDecode from 'jwt-decode'
 import '../css/forms.css'
 
 export class Menu extends Component {
@@ -17,6 +18,13 @@ export class Menu extends Component {
                 mealData:doc.data
             })
         })
+    }
+    order = () => {
+        // if(localStorage.getItem('FBIdToken')){
+        //     let token = localStorage.getItem('FBIdToken');
+        //     const decodedToken = jwtDecode(token);
+             
+        // }
     }
     render() {
         let mealPage = this.state.mealData ? (
@@ -37,9 +45,9 @@ export class Menu extends Component {
                                 $ {this.state.mealData.mealData.mealPrice}
                             </h4>
                             <div className = 'order-btn'>
-                                <a href = '/'>
+                                <button onClick = {this.order}>
                                     Order
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,9 @@ import gridPicThree from '../img/gallery-three.jpg'
 import gridPicFour from '../img/gallery-four.jpg'
 import gridPicFive from '../img/gallery-five.jpg'
 
-
+let eventOne = 'https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+let eventTwo = 'https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+let eventThree = 'https://images.pexels.com/photos/801863/pexels-photo-801863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 let map = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91283.43345969872!2d-79.7357621310863!3d44.35911785057593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882aa3371ad7206d%3A0x1d2e0f00a84b535a!2sBarrie%2C%20ON!5e0!3m2!1sen!2sca!4v1578874659424!5m2!1sen!2sca'
 
 export class Home extends Component {
@@ -38,10 +40,10 @@ export class Home extends Component {
                     </div>
                     <div className = 'home-menu-card-txt'>
                         <h5>
-                            {meal.data.mealTitle}
+                            <a href = {`meal/${meal.mealId}`}>{meal.data.mealTitle}</a>
                         </h5>
                         <p>
-                            {meal.data.mealPrice}
+                            $ {meal.data.mealPrice}
                         </p>
                     </div>
                 </div>
@@ -51,6 +53,7 @@ export class Home extends Component {
             <div>
                 <div className = 'home-intro'>
                     <img className = 'intro-background' src = {homeBackground} alt = 'background'></img>
+                    <div class = 'home-background-filter'></div>
                     <div className = 'container'>
                         <div className = 'home-intro-content'>
                             <div className = 'home-intro-text'>
@@ -121,6 +124,11 @@ export class Home extends Component {
                                 {mealGrid}
                             </div>
                         </div>
+                        <div className = 'order-btn btn-home-menu'>
+                            <a href = '/menu'>
+                                More
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className = 'home-events'>
@@ -133,10 +141,10 @@ export class Home extends Component {
                         <div className = 'home-events-content'>
                             <div className = 'home-event-card'>
                                 <div className = 'home-event-card-img'>
-                                    <img src = '/' alt = 'event pic'></img>
+                                    <img src = {eventOne} alt = 'event pic'></img>
                                 </div>
                                 <div className = 'home-event-card-txt'>
-                                    <h5>Title Text here</h5>
+                                    <h5>Trivia Night</h5>
                                     <p>Monday, 25 Jan 9:00pm</p>
                                     <div className = 'order-btn'>
                                         <a href = '/'>
@@ -147,11 +155,11 @@ export class Home extends Component {
                             </div>
                             <div className = 'home-event-card'>
                                 <div className = 'home-event-card-img'>
-                                    <img src = '/' alt = 'event pic'></img>
+                                    <img src = {eventThree} alt = 'event pic'></img>
                                 </div>
                                 <div className = 'home-event-card-txt'>
-                                    <h5>Title Text here</h5>
-                                    <p>Monday, 25 Jan 9:00pm</p>
+                                    <h5>Punjabi Night</h5>
+                                    <p>Monday, 30 Jan 9:00pm</p>
                                     <div className = 'order-btn'>
                                         <a href = '/'>
                                             More
@@ -161,11 +169,11 @@ export class Home extends Component {
                             </div>
                             <div className = 'home-event-card'>
                                 <div className = 'home-event-card-img'>
-                                    <img src = '/' alt = 'event pic'></img>
+                                    <img src = {eventTwo} alt = 'event pic'></img>
                                 </div>
                                 <div className = 'home-event-card-txt'>
-                                    <h5>Title Text here</h5>
-                                    <p>Monday, 25 Jan 9:00pm</p>
+                                    <h5>Stand-Up Night</h5>
+                                    <p>Friday, 28 Feb 9:00pm</p>
                                     <div className = 'order-btn'>
                                         <a href = '/'>
                                             More

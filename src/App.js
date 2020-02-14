@@ -29,13 +29,9 @@ import MealType from './pages/mealType'
 import MealPref from './pages/mealPref'
 
 let authenticated;
-
 const token = localStorage.FBIdToken
-console.log(token)
-
 if(token){
   const decodedToken = jwtDecode(token);
-  console.log(decodedToken)
   if(decodedToken.exp * 1000 < Date.now()){
     authenticated = false;
   }else{
@@ -45,9 +41,13 @@ if(token){
 
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+
+    }
+  }
   render(){
-    console.log(this.props)
-    console.log(authenticated)
     return (
       <BrowserRouter>
         <div className="App">
@@ -59,10 +59,10 @@ class App extends Component {
           <AuthRoute path = '/login' component = {Login} authenticated = {authenticated} />
           <AuthRoute path = '/signup' component = {Signup} authenticated = {authenticated}/>
           <Route path = '/admin/add/meal' component = {PostMeal} />
-          <Route path = '/meal/:id' component = {Meal} />
+          <Route path = '/meal/:id' component = {(props) => <Meal {...props}/>} />
           <Route path = '/meals/type/:mealType' component = {MealType} />
           <Route path = '/meals/pref/:mealPref' component = {MealPref} />
-          <UserRoute path = '/user' component = {User} authenticated = {authenticated}/>
+          <UserRoute path = '/user' component = {(props) => <User user = {this.state.user} {...props} />} authenticated = {authenticated} user = {this.state.user} />
           <Footer />
         </div>
       </BrowserRouter>
