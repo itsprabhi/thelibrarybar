@@ -43,6 +43,10 @@
 .menu-sidebar-section-options li{
     margin: 10px auto;
 }
+.menu-sidebar-section-options li a{
+    color:#201402;
+    text-decoration: none;
+}
 
 /* MEAL PAGE */
 
@@ -69,4 +73,27 @@
 }
 .meal-page-txt{
     padding-left: 30px;
+}
+
+.meal-order-btn{
+    margin: 5px 0px;
+    background: #EA9B03;
+    border: none;
+    color:white;
+    padding: 10px 20px;
+}
+
+@media screen and (max-width:800px){
+    .menu-page-content,.meal-page-content{
+        display:block;
+    }
+    .main-menu-grid,.menu-sidebar,.meal-page-content > div{
+        width:100%;
+    }
+    .main-menu-grid{
+        grid-template-columns: auto auto;
+    }
+    .meal-page-content > div{
+        margin: 30px auto;
+    }
 }

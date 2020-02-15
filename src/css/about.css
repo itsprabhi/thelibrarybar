@@ -1,6 +1,6 @@
 .about-page-content{
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     align-items: center ;
 }
@@ -17,4 +17,18 @@
 }
 .about-page-text{
     padding: 30px;
+}
+
+@media screen and (max-width:800px){
+    .about-page-content{
+        width: 95%;
+        display: block;
+        margin: auto;
+    }
+    .about-page-content >div{
+        width: 100%;
+    }
+    .about-page-text{
+        padding: 10px 0px;
+    }
 }

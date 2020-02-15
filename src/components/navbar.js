@@ -9,9 +9,9 @@ const Navbar = () => {
                     <div className = 'nav-container'>
                         <div className = 'navbar-brand'>
                             <div className = 'navbar-brand-text'>
-                                <h2>
+                                <h3>
                                     The Library Bar
-                                </h2>
+                                </h3>
                             </div>
                         </div>
                         <div className = 'navbar-list'>
@@ -50,6 +50,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
                         </div>
+                        <div className = 'navbar-toggle'></div>
                     </div>
                 </div>
             </div>

@@ -18,25 +18,25 @@ const Footer = () => {
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
                                 </p>
                             </div>
-                            <div className = 'navbar-list'>
-                                <div className = 'navbar-items'>
+                            <div className = 'footer-navbar-list'>
+                                <div className = 'footer-navbar-items'>
                                     <ul>
-                                        <li className = 'navbar-item'>
+                                        <li className = 'footer-navbar-item'>
                                             <Link to = '/'>
                                                 Home
                                             </Link>
                                         </li>
-                                        <li className = 'navbar-item'>
+                                        <li className = 'footer-navbar-item'>
                                             <Link to = '/menu'>
                                                 Menu
                                             </Link>
                                         </li>
-                                        <li className = 'navbar-item'>
+                                        <li className = 'footer-navbar-item'>
                                             <Link to = '/contact'>
                                                 Contact
                                             </Link>
                                         </li>
-                                        <li className = 'navbar-item'>
+                                        <li className = 'footer-navbar-item'>
                                             <Link to = '/about'>
                                                 About
                                             </Link>

@@ -43,10 +43,19 @@ if(token){
 class App extends Component {
   constructor(){
     super();
+    this.order = this.order.bind(this)
     this.state = {
-
+      cart:[]
     }
   }
+  order = (meal) => {
+    console.log('hi')
+      this.state.cart.push(meal);
+      this.setState({
+        cart:this.state.cart
+      })
+      console.log(this.state.cart)
+  } 
   render(){
     return (
       <BrowserRouter>
@@ -59,7 +68,7 @@ class App extends Component {
           <AuthRoute path = '/login' component = {Login} authenticated = {authenticated} />
           <AuthRoute path = '/signup' component = {Signup} authenticated = {authenticated}/>
           <Route path = '/admin/add/meal' component = {PostMeal} />
-          <Route path = '/meal/:id' component = {(props) => <Meal {...props}/>} />
+          <Route path = '/meal/:id' component = {(props) => <Meal {...props} order = {this.order} />} />
           <Route path = '/meals/type/:mealType' component = {MealType} />
           <Route path = '/meals/pref/:mealPref' component = {MealPref} />
           <UserRoute path = '/user' component = {(props) => <User user = {this.state.user} {...props} />} authenticated = {authenticated} user = {this.state.user} />

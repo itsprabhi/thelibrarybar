@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import jwtDecode from 'jwt-decode'
 import '../css/forms.css'
+import OrderModal from '../components/orderModal'
 
 export class Menu extends Component {
     constructor(){
         super();
         this.state = {
-            mealData:null
+            mealData:null,
+            orderOn:false
         }
     }
     componentDidMount(){
@@ -19,16 +20,31 @@ export class Menu extends Component {
             })
         })
     }
-    order = () => {
-        // if(localStorage.getItem('FBIdToken')){
-        //     let token = localStorage.getItem('FBIdToken');
-        //     const decodedToken = jwtDecode(token);
-             
-        // }
+    modalSwitch = () => {
+        if(this.state.orderOn){
+            this.setState({
+                orderOn:false
+            })
+        }else{
+            this.setState({
+                orderOn:true
+            })
+        }
+    }
+    modalClose = () => {
+        this.setState({
+            orderOn:false
+        })
     }
     render() {
+        let modal = this.state.orderOn ? (
+            <OrderModal meal = {this.state.mealData} close = {this.modalClose} />
+        ):(
+            <p></p>
+        )
         let mealPage = this.state.mealData ? (
             <div className = 'meal-page'>
+                {modal}
                 <div className = 'container'>
                     <div className = 'meal-page-content'>
                         <div class = 'meal-page-img'>
@@ -45,7 +61,7 @@ export class Menu extends Component {
                                 $ {this.state.mealData.mealData.mealPrice}
                             </h4>
                             <div className = 'order-btn'>
-                                <button onClick = {this.order}>
+                                <button class = 'meal-order-btn' onClick = {this.modalSwitch}>
                                     Order
                                 </button>
                             </div>

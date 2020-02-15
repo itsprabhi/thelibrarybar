@@ -12,9 +12,6 @@
     align-items: center;
 }
 
-.navbar-brand-text h2{
-    font-size: 1.7vw;
-}
 
 .navbar-items ul{
     list-style: none;
@@ -30,6 +27,10 @@
 .navbar-item a{
     color:white;
     text-decoration: none;
+}
+
+.navbar-toggle{
+  display: none;
 }
 
 /* Dropdown Button */
@@ -73,3 +74,49 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+@media screen and (max-width:800px){
+  .nav-container{
+    position: relative;
+    padding: 10px 0px;
+  }
+  
+  .navbar-items ul{
+    position: absolute;
+    right: 0px;
+    width:50vw;
+    background: #1E0E05;
+    display: none;
+  }
+
+  .navbar-item{
+    display: block;
+  }
+
+  .navbar-toggle{
+    display: block;
+    width: 10%;
+    background: white;
+    height: 5px;
+    position: relative;
+  }
+  .navbar-toggle::after{
+    content: '';
+    width:100%;
+    height: 5px;
+    background: white;
+    top: -10px;
+    left: 0px;
+    position: absolute;
+  }
+  .navbar-toggle::before{
+    content: '';
+    width:100%;
+    height: 5px;
+    background: white;
+    top: 10px;
+    left: 0px;
+    position: absolute;
+  }
+}
+
