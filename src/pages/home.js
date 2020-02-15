@@ -53,7 +53,7 @@ export class Home extends Component {
             <div>
                 <div className = 'home-intro'>
                     <img className = 'intro-background' src = {homeBackground} alt = 'background'></img>
-                    <div class = 'home-background-filter'></div>
+                    <div className = 'home-background-filter'></div>
                     <div className = 'container'>
                         <div className = 'home-intro-content'>
                             <div className = 'home-intro-text'>
