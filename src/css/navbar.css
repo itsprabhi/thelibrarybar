@@ -47,6 +47,8 @@
   display: inline-block;
 }
 
+
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
@@ -83,14 +85,20 @@
   
   .navbar-items ul{
     position: absolute;
-    right: 0px;
+    right: -20px;
     width:50vw;
     background: #1E0E05;
+    z-index: 2;
+    top: 45px;
+  }
+
+  .display-nav{
     display: none;
   }
 
   .navbar-item{
     display: block;
+    margin: 10vh 10px;
   }
 
   .navbar-toggle{

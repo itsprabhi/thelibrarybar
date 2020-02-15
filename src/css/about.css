@@ -27,6 +27,7 @@
     }
     .about-page-content >div{
         width: 100%;
+        margin: 20px auto;
     }
     .about-page-text{
         padding: 10px 0px;
