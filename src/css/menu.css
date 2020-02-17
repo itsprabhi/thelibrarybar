@@ -96,4 +96,7 @@
     .meal-page-content > div{
         margin: 30px auto;
     }
+    .meal-page-txt{
+        padding-left: 0px;
+    }
 }

@@ -29,9 +29,9 @@ export class Navbar extends Component {
                         <div className = 'nav-container'>
                             <div className = 'navbar-brand'>
                                 <div className = 'navbar-brand-text'>
-                                    <h3>
+                                    <h4>
                                         The Library Bar
-                                    </h3>
+                                    </h4>
                                 </div>
                             </div>
                             <div className = 'navbar-list'>

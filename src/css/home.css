@@ -118,6 +118,7 @@
 .home-menu-card > div {
     margin: 5px 10px;
 }
+
 .home-menu-card-img{
     width:60px;
     height: 60px;
@@ -239,8 +240,16 @@
     .home-about-img::after{
         display: none;
     }
+    .home-menu-card{
+        display: block;
+    }
     .home-menu-grid{
-        width: 80%;
+        width: 70%;
+        justify-content: space-between;
+    }
+    .home-menu-card-img{
+        width: 70px;
+        height: 70px;
     }
     .home-events-content{
         grid-template-columns: auto;
@@ -257,5 +266,8 @@
     }
     .map-embed{
         margin: auto;
+    }
+    .home-gallery-grid{
+        grid-template-columns: auto auto;
     }
 }
