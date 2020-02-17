@@ -3,6 +3,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer'
 import { BrowserRouter,Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode'
+import axios from 'axios'
 
 //CSS
 import './css/navbar.css'
@@ -13,6 +14,7 @@ import './css/forms.css'
 //UTILS
 import AuthRoute from './util/authroute'
 import UserRoute from './util/userroute'
+
 
 
 //Pages
@@ -27,6 +29,9 @@ import Meal from './pages/meal'
 import User from './pages/user'
 import MealType from './pages/mealType'
 import MealPref from './pages/mealPref'
+
+
+axios.defaults.baseURL = 'https://us-central1-thelibrarybar-fe0ca.cloudfunctions.net/api';
 
 let authenticated;
 const token = localStorage.FBIdToken
