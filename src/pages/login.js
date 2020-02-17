@@ -38,7 +38,7 @@ export class Login extends Component {
     }
     render() {
         const emailHelper = this.state.errors.error ? (
-            <p>
+            <p style = {{color:'red'}}>
                 {this.state.errors.error.email}
             </p>
         ) : (
@@ -47,7 +47,7 @@ export class Login extends Component {
             </p>
             )
         const passwordHelper = this.state.errors.error ? (
-            <p>
+            <p style = {{color:'red'}}>
                 {this.state.errors.error.password}
             </p>
         ) : (
@@ -56,7 +56,7 @@ export class Login extends Component {
             </p>
             )
         const handleHelper = this.state.errors.error ? (
-            <p>
+            <p style = {{color:'red'}}>
                 {this.state.errors.error.userHandle}
             </p>
         ) : (

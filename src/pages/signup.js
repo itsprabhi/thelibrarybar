@@ -38,13 +38,13 @@ export class Signup extends Component {
                     error:err
                 }
             })
-            console.log(this.state.errors)
+            console.log(this.state.errors.error.response.data.errors)
         })
     }
     render() {
         const emailHelper = this.state.errors.error ? (
-            <p>
-                {this.state.errors.error.email}
+            <p style = {{color:'red'}}>
+                {this.state.errors.error.response.data.errors.email}
             </p>
         ) : (
             <p>
@@ -52,8 +52,8 @@ export class Signup extends Component {
             </p>
             )
         const passwordHelper = this.state.errors.error ? (
-            <p>
-                {this.state.errors.error.password}
+            <p style = {{color:'red'}}>
+                {this.state.errors.error.response.data.errors.password}
             </p>
         ) : (
             <p>
@@ -61,14 +61,23 @@ export class Signup extends Component {
             </p>
             )
         const handleHelper = this.state.errors.error ? (
-            <p>
-                {this.state.errors.error.userHandle}
+            <p style = {{color:'red'}}>
+                {this.state.errors.error.response.data.errors.userHandle}
             </p>
         ) : (
             <p>
                 
             </p>
             )
+            const confirmedHelper = this.state.errors.error ? (
+                <p style = {{color:'red'}}>
+                    {this.state.errors.error.response.data.errors.confirmedPassword}
+                </p>
+            ) : (
+                <p>
+                    
+                </p>
+                )
         return (
             <div>
                 <div className = 'login-page'>
@@ -90,6 +99,7 @@ export class Signup extends Component {
                                         {passwordHelper}
                                         <lable for = 'confirmedPassword' />Confirmed Password<br />
                                         <input type = 'password' id = 'confirmedPassword' name = 'confirmedPassword' className = 'signup-password form-input-text' placeholder = 'Renter your password' onChange = {this.handleChange}/><br />
+                                        {confirmedHelper}
                                         <lable for = 'userHandle' />User handle<br />
                                         <input type = 'text' id = 'userHandle' name = 'userHandle' className = 'signup-userHandle form-input-text' placeholder = 'Enter your password' onChange = {this.handleChange}/><br />
                                         {handleHelper}

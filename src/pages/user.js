@@ -11,8 +11,12 @@ export class User extends Component {
         console.log(this.props)
         console.log(this.state)
         return (
-            <div>
-                User
+            <div style = {{
+                width:"100%",
+                textAlign:'center',
+                margin:'50px auto'
+            }}>
+                Hi WELCOME!
             </div>
         )
     }
