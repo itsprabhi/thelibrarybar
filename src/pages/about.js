@@ -16,8 +16,16 @@ export class About extends Component {
                                 Hi, this is the Library Bar
                             </h3>
                             <p>
-                                One of the best places to relax and have some delicious food. We make sure that bar gives you the best vibes.
+                            Welcome to the Library Bar. A place to immerse yourself into the world of drinks and books. The best place to relax and burst all of your stress. You will get the experience of our exotic drinks, along with the vibes of contentment and joy.
                             </p>
+                            <p>
+                            The Library Bar was started by John Doe in 1956. His goal was to create a place for delighting and making people feel their happiness. Since then, the Library Bar is making people wise and happy. Are you next?
+                            </p>
+                            <div className = 'order-btn'>
+                            <a href = '/menu'>
+                                Order Now
+                            </a>
+                            </div>
                             {/* <div className = 'social-list'>
                                 <ul>
                                     <li className = 'social-list-item'>

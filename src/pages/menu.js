@@ -31,7 +31,7 @@ export class Menu extends Component {
                             {meal.data.mealTitle}
                         </h3>
                         <p>
-                            {meal.data.mealPrice}
+                            ${meal.data.mealPrice}
                         </p>
                         <div class = 'order-btn'>
                             <a href = {`/meal/${meal.mealId}`} id = {meal.mealId}>
@@ -57,12 +57,7 @@ export class Menu extends Component {
                         </h2>
                     </div>
                     <div className = 'menu-page-content'>
-                        <div className = 'main-menu'>
-                            <div className = 'main-menu-grid'>
-                                {mealGrid}
-                            </div>
-                        </div>
-                        <div className = 'menu-sidebar'>
+                    <div className = 'menu-sidebar'>
                             <div className = 'menu-sidebar-section'>
                                 <div className = 'menu-sidebar-section-heading'>
                                     <h5>
@@ -114,6 +109,11 @@ export class Menu extends Component {
                                         </li>
                                     </ul>
                                 </div>
+                            </div>
+                        </div>
+                        <div className = 'main-menu'>
+                            <div className = 'main-menu-grid'>
+                                {mealGrid}
                             </div>
                         </div>
                     </div>

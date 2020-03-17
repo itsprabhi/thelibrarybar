@@ -65,8 +65,8 @@ export class Home extends Component {
                                     A drink of knowledge
                                 </p>
                                 <div className = 'order-btn'>
-                                    <a href = '/'>
-                                        Order
+                                    <a href = '/menu'>
+                                        Order Now
                                     </a>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ export class Home extends Component {
                                     About Us
                                 </h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                    Welcome to the Library Bar. A place to immerse yourself into the world of drinks and books. The best place to relax and burst all of your stress. You will get the experience of our exotic drinks, along with the vibes of contentment and joy.
                                 </p>
                                 <h5>
                                     What makes us special
@@ -147,7 +147,7 @@ export class Home extends Component {
                                 <div className = 'home-event-card-txt'>
                                     <h5>Trivia Night</h5>
                                     <p>Monday, 25 Jan 9:00pm</p>
-                                    <div className = 'order-btn'>
+                                    <div className = 'order-btn event-btn'>
                                         <a href = '/'>
                                             More
                                         </a>

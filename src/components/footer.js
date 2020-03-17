@@ -15,7 +15,7 @@ const Footer = () => {
                             </div>
                             <div className = 'footer-brand-para'>
                                 <p>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                The Library Bar was started by John Doe in 1956. His goal was to create a place for delighting and making people feel their happiness. Since then, the Library Bar is making people wise and happy. Are you next?
                                 </p>
                             </div>
                             <div className = 'footer-navbar-list'>
